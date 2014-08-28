@@ -29,7 +29,7 @@
         padding: 8px 16px;
         border-radius: 0;
     }
-    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+    ul.nav-tabs ul.nav-tabs {
         color: #fff;
         background: #0088cc;
         border: 1px solid #0088cc;
@@ -43,6 +43,12 @@
     ul.nav-tabs.affix{
         top: 30px; /* Set the top position of pinned element */
     }
+    
+    li.active a
+    {
+      color: rgb(66,​ 139,​ 202);
+    }
+    
     h1
     {
       line-height: 1.2em; 
@@ -68,7 +74,7 @@
   <div class="row">
     <div class="col-xs-3" id="myScrollspy">
       <ul class="nav nav-tabs nav-stacked" id="myNav">
-        <li class="active"><a href="#first">Pirma savaitė</a></li>
+        <li><a href="#first">Pirma savaitė</a></li>
         <li><a href="#second">Antra savaitė</a></li>
         <li><a href="#third">Trečia savaitė</a></li>
         <li><a href="#fourth">Ketvirta savaitė</a></li>
@@ -87,39 +93,7 @@
             <th class="col-md-2"><b>Vakarienė</b></th>
           </tr>
         </thead>
-        <tbody>
-          <tr style="height : 100px;">
-            <td><b>Pirmadienis</b></td>
-            <td><a style = "cursor:pointer" class="RecipePopover" data-html="true" data-toggle="popover" title="Ypatingi makaronai" data-content="<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href='makaronai.html'>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>">Ypatingi Makarai</a><p>Sutrumpintas aprasas. Bla bla bla makaronai, daug vitaminu ir gelezies, b12, kalcis, etc</p></td>
-            <td><p>Makarai</p><p>Kiti makarai, dar geresni, etc etc</p></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Antradienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Trečiadienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Ketvirtadienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
+        <tbody id="first-week">
         </tbody>
       </table>
       
@@ -135,39 +109,7 @@
             <th class="col-md-2"><b>Vakarienė</b></th>
           </tr>
         </thead>
-        <tbody>
-          <tr style="height : 100px;">
-            <td><b>Pirmadienis</b></td>
-            <td><a style = "cursor:pointer" class="RecipePopover" data-html="true" data-toggle="popover" title="Ypatingi makaronai" data-content="<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href='makaronai.html'>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>">Ypatingi Makarai</a><p>Sutrumpintas aprasas. Bla bla bla makaronai, daug vitaminu ir gelezies, b12, kalcis, etc</p></td>
-            <td><p>Makarai</p><p>Kiti makarai, dar geresni, etc etc</p></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Antradienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Trečiadienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Ketvirtadienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
+        <tbody id="second-week">
         </tbody>
       </table>
 
@@ -183,39 +125,7 @@
             <th class="col-md-2"><b>Vakarienė</b></th>
           </tr>
         </thead>
-        <tbody>
-          <tr style="height : 100px;">
-            <td><b>Pirmadienis</b></td>
-            <td><a style = "cursor:pointer" class="RecipePopover" data-html="true" data-toggle="popover" title="Ypatingi makaronai" data-content="<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href='makaronai.html'>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>">Ypatingi Makarai</a><p>Sutrumpintas aprasas. Bla bla bla makaronai, daug vitaminu ir gelezies, b12, kalcis, etc</p></td>
-            <td><p>Makarai</p><p>Kiti makarai, dar geresni, etc etc</p></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Antradienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Trečiadienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Ketvirtadienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
+        <tbody id="third-week">
         </tbody>
       </table>
       <h2 id="fourth">Ketvirta savaitė</h2>
@@ -230,39 +140,7 @@
             <th class="col-md-2"><b>Vakarienė</b></th>
           </tr>
         </thead>
-        <tbody>
-          <tr style="height : 100px;">
-            <td><b>Pirmadienis</b></td>
-            <td><a style = "cursor:pointer" class="RecipePopover" data-html="true" data-toggle="popover" title="Ypatingi makaronai" data-content="<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href='makaronai.html'>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>">Ypatingi Makarai</a><p>Sutrumpintas aprasas. Bla bla bla makaronai, daug vitaminu ir gelezies, b12, kalcis, etc</p></td>
-            <td><p>Makarai</p><p>Kiti makarai, dar geresni, etc etc</p></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Antradienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Trečiadienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
-          <tr style="height : 100px;">
-            <td><b>Ketvirtadienis</b></td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-            <td>Makarai</td>
-          </tr>
+        <tbody id="fourth-week">
         </tbody>
       </table>
     </div>
@@ -271,22 +149,32 @@
   <script src="http://code.jquery.com/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <script>
-  $(document).ready(function(){
-      $(".RecipePopover").popover({
-          placement : 'right'
-      });
-    $("#myNav").affix({
-        offset: { 
-            top: 125 
-     	}
-    });
+  $(document).ready(function()
+  {
+    
     $.ajax(
     {
       dataType: "json",
       url: 'test.json',
-      success: function(response) 
+      success: function(mealData) 
       {
-      alert('adasdad');
+        $.ajax(
+        {
+          dataType: "html",
+          url: 'test.html',
+          success: function(rowHtml) 
+          {
+            mealData["weekdays"].forEach(function(weekday)
+            {
+              $("#first-week").html($("#first-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
+              $("#second-week").html($("#second-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
+              $("#third-week").html($("#third-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
+              $("#fourth-week").html($("#fourth-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
+            });
+            $(".RecipePopover").popover({placement : 'right'});
+            $("#myNav").affix({offset: {top: 125 }});
+          }
+        });
       }
     });
   });
