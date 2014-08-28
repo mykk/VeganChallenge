@@ -72,6 +72,16 @@
   {
     $.ajax(
     {
+      dataType: "html",
+      url: 'container.html',
+      success: function(container) 
+      {
+        $("#mainbody").html(container);
+      }
+    });
+    
+    $.ajax(
+    {
       dataType: "json",
       url: 'test.json',
       success: function(mealData) 
@@ -93,16 +103,6 @@
             $("#myNav").affix({offset: {top: 125 }});
           }
         });
-      }
-    });
-    
-    $.ajax(
-    {
-      dataType: "html",
-      url: 'container.html',
-      success: function(container) 
-      {
-        $("#mainbody").html(container);
       }
     });
   });
