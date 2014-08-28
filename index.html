@@ -1,0 +1,69 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="http://getbootstrap.com/dist/css/bootstrap.css" />
+<link href="http://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
+
+
+</head>
+<body>
+  <div class="container">
+    <h1 style="line-height: 1.2em; color: #667;font-family: Rokkitt,serif;font-size: 70px;font-weight: 400;padding: 5px 0px 0px 0px;">Vegan Challange</h1>
+    <div style="padding-top : 20px">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="col-md-1"></th>
+          <th class="col-md-2"><b>BREAKFAST</b></th>
+          <th class="col-md-2"><b>SNACK 1</b></th>
+          <th class="col-md-2"><b>LUNCH</b></th>
+          <th class="col-md-2"><b>SNACK 2</b></th>
+          <th class="col-md-2"><b>DINNER</b></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="height : 100px;">
+          <td><b>Pirmadienis</b></td>
+          <td><a style = "cursor:pointer" class="RecipePopover" data-html="true" data-toggle="popover" title="Ypatingi makaronai" data-content="<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href='makaronai.html'>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>">Ypatingi Makarai</a><p>Sutrumpintas aprasas. Bla bla bla makaronai, daug vitaminu ir gelezies, b12, kalcis, etc</p></td>
+          <td><p>Makarai</p><p>Kiti makarai, dar geresni, etc etc</p></td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+        </tr>
+        <tr style="height : 100px;">
+          <td><b>Antradienis</b></td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+        </tr>
+        <tr style="height : 100px;">
+          <td><b>Treèiadienis</b></td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+        </tr>
+        <tr style="height : 100px;">
+          <td><b>Ketvirtadienis</b></td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+          <td>Makarai</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".RecipePopover").popover({
+        placement : 'right'
+    });
+});
+</script>
+<body>
