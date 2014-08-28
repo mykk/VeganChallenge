@@ -1,5 +1,9 @@
 ﻿{
-"weeks" : ["Pirma Savaitė", ""],
+"weeks" : ["Pirma savaitė", "Antra savaitė", "Trečia savaitė", "Ketvirta savaitė"],
+"Pirma savaitė" : "first-week",
+"Antra savaitė" : "second-week",
+"Trečia savaitė" : "third-week",
+"Ketvirta savaitė" : "fourth-week",
 "weekdays": ["Pirmadienis", "Antradienis", "Trečiadienis", "Ketvirtadienis", "Penktadienis", "Šeštadienis", "Sekmadienis"],
 "meals": ["Pusryčiai", "Priešpiečiai", "Pietūs", "Užkandis", "Vakarienė"]
 }

@@ -84,15 +84,37 @@
     {
       dataType: "json",
       url: 'test.json',
-      success: function(mealData) 
+      success: function(data) 
       {
         $.ajax(
         {
           dataType: "html",
+          async : false,
+          url: 'week_table.html',
+          success: function(week_table) 
+          {
+            data["weeks"].forEach(function(week)
+            {
+              newWeeksDiv = week_table.replace("{{WEEK}}", week).replace("{{WEEK_ID}}", data[week]);
+              i = 0;
+              data["meals"].forEach(function(meal)
+              {
+                newWeeksDiv = newWeeksDiv.replace("{{meal_" + i + "}}", meal); 
+                i+= 1;
+              });
+              $("#weeks").html($("#weeks").html() + newWeeksDiv);
+            });
+          }
+        });
+               
+        $.ajax(
+        {
+          dataType: "html",
           url: 'test.html',
+          async : false,
           success: function(rowHtml) 
           {
-            mealData["weekdays"].forEach(function(weekday)
+            data["weekdays"].forEach(function(weekday)
             {
               $("#first-week").html($("#first-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
               $("#second-week").html($("#second-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
