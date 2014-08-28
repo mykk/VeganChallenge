@@ -7,15 +7,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $("#myNav").affix({
-        offset: { 
-            top: 125 
-     	}
-    });
-});
-</script>
+
 <style type="text/css">
     /* Custom Styles */
     ul.nav-tabs{
@@ -283,6 +275,20 @@ $(document).ready(function(){
       $(".RecipePopover").popover({
           placement : 'right'
       });
+    $("#myNav").affix({
+        offset: { 
+            top: 125 
+     	}
+    });
+    $.ajax(
+    {
+      dataType: "json",
+      url: 'test.json',
+      success: function(response) 
+      {
+      alert('adasdad');
+      }
+    });
   });
   </script>
 </body>
