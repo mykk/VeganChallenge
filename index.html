@@ -70,62 +70,87 @@
   <script>
   $(document).ready(function()
   {
-    $.ajax(
+    try
     {
-      dataType: "html",
-      url: 'container.html',
-      success: function(container) 
+      $.ajax(
       {
-        $("#mainbody").html(container);
-      }
-    });
-    
-    $.ajax(
-    {
-      dataType: "json",
-      url: 'test.json',
-      async : false,
-      success: function(data) 
-      {
-        $.ajax(
+        dataType: "html",
+        url: 'container.html',
+        async : false,
+        success: function(container) 
         {
-          dataType: "html",
-          async : false,
-          url: 'week_table.html',
-          success: function(week_table) 
+          $("#mainbody").html(container);
+        }
+      });
+      
+      $.ajax(
+      {
+        dataType: "json",
+        url: 'test.json',
+        async : false,
+        success: function(data) 
+        {
+          $.ajax(
           {
-            data["weeks"].forEach(function(week)
+            dataType: "html",
+            async : false,
+            url: 'week_table.html',
+            success: function(week_table) 
             {
-              var newWeeksDiv = week_table.replace("{{WEEK}}", week).split("{{WEEK_ID}}").join(data[week]);
-              var i = 0;
-              data["meals"].forEach(function(meal)
+              data["weeks"].forEach(function(week)
               {
-                newWeeksDiv = newWeeksDiv.replace("{{meal_" + i + "}}", meal); 
-                i+= 1;
-              });
-              $("#weeks").html($("#weeks").html() + newWeeksDiv);
-              
-              $.ajax(
-              {
-                dataType: "html",
-                url: 'weekday_recipes.html',
-                async : false,
-                success: function(rowHtml) 
+                var newWeeksDiv = week_table.replace("{{WEEK}}", week).split("{{WEEK_ID}}").join(data[week]);
+                var i = 0;
+                data["meals"].forEach(function(meal)
                 {
-                  data["weekdays"].forEach(function(weekday)
+                  newWeeksDiv = newWeeksDiv.replace("{{meal_" + i + "}}", meal); 
+                  i+= 1;
+                });
+                $("#weeks").html($("#weeks").html() + newWeeksDiv);
+                
+                $.ajax(
+                {
+                  dataType: "html",
+                  url: 'weekday_recipes.html',
+                  async : false,
+                  success: function(rowHtml) 
                   {
-                    var weekId = "#" + data[week] + "-week";
-                    $(weekId).html($(weekId).html() + rowHtml.replace("{{WEEKDAY}}", weekday));
-                  });
-                }
+                    data["weekdays"].forEach(function(weekday)
+                    {
+                      var weekId = "#" + data[week] + "-week";
+                      $(weekId).html($(weekId).html() + rowHtml.split("{{WEEKDAY_NAME}}").join(weekday).split("{{WEEKDAY}}").join(data[weekday]).split("{{WEEK}}").join(data[week]));
+                      
+                      var weekWeekdayId = data[week] + '-' + data[weekday];
+                      var i = 0;
+                      data[weekWeekdayId].forEach(function(meal)
+                      {
+                        var meal_td = "<td><a style = 'cursor:pointer' class='RightPopover' data-html='true' data-toggle='popover' title='{{title}}' data-content='{{data-content}}'>{{title}}</a>{{description}}</td>";
+                        meal_td = meal_td.split("{{title}}").join(meal);
+                        meal_td = meal_td.split("{{description}}").join(data[meal]["description"]);
+                        meal_td = meal_td.split("{{data-content}}").join(data[meal]["popover"]);
+                        
+                        if (i > data[weekWeekdayId].length / 2)
+                        {
+                          meal_td = meal_td.replace("RightPopover", "LeftPopover");
+                        }
+                        i += 1;
+                        $("#" + weekWeekdayId).html($("#" + weekWeekdayId).html() + meal_td);
+                      });
+                    });
+                  }
+                });
               });
-            });
-          }
-        });
-      }
-    });
-    $(".RecipePopover").popover({placement : 'right'});
-    $("#myNav").affix({offset: {top: 125 }});
+            }
+          });
+        }
+      });
+    }
+    finally
+    {
+      $(".RightPopover").popover({placement : 'right'});
+      $(".LeftPopover").popover({placement : 'left'});
+      $("#myNav").affix({offset: {top: 125 }});
+    }
   });
   </script>
 </body>

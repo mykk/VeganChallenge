@@ -15,5 +15,66 @@
 "Penktadienis" : "friday", 
 "Šeštadienis" : "saturday", 
 "Sekmadienis" : "sunday",
-"first-monday" : ["Ypatingi makaronai", "Kitokie makaronai", "Makaronai", "Makaronai2", "Makaronai3"]
+"first-monday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+
+"Ypatingi makaronai" : 
+{
+  "description" : "<p>Tai makaronai pusryčiams, bet tinka bet kada</p><p>Ypatingas sojonezo ir kečiupo padažias padaro jį išskirtiniu</p>",
+  "popover" : "<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href=makaronai.html>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>"
+},
+
+"Kitokie makaronai" : 
+{
+  "description" : "<p>kazkuo kitokie makaronai, bet šiaip tokie pat.</p>",
+  "popover" : "<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href=makaronai.html>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>"  
+}, 
+
+"Pirmadieniniai makaronai" : 
+{
+  "description" : "<p>Pirmadienio makaronai su druska.</p>",
+  "popover" : "<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href=makaronai.html>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>"  
+}, 
+
+"Makaronai užkandžiui (pirmadienį)" : 
+{
+  "description" : "<p>Lengvas makaronų patiekalas užkandžiui</p>",
+  "popover" : "<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href=makaronai.html>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>"  
+}, 
+
+"Pirmadienio vakarienės makaronai" : 
+{
+  "description" : "<p>Vakaras be makarų yra nesąmonė. Šis receptas atgaivins jus po sunkios darbo dienos.</p>",
+  "popover" : "<p>Siam receptui reikes:</p><ul><li>Makaronu 1kg</li><li>Vandens litrai</li><li>Druska 0.25kg</li></ul><p>Ilgas receptas:</p><ul><li>Uzverdam vandeni</li><li>Iberiam druska ir makarus</li></ul><a href=makaronai.html>Recepto nuoroda atskirame lange, su dar daugiau detaliu</a>"  
+},
+
+"first-tuesday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"first-wednesday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"first-thursday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"first-friday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"first-saturday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"first-sunday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+
+"second-monday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"second-tuesday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"second-wednesday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"second-thursday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"second-friday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"second-saturday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"second-sunday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+
+"third-monday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"third-tuesday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"third-wednesday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"third-thursday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"third-friday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"third-saturday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"third-sunday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+
+"fourth-monday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"fourth-tuesday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"fourth-wednesday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"fourth-thursday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"fourth-friday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"fourth-saturday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"],
+"fourth-sunday" : ["Ypatingi makaronai", "Kitokie makaronai", "Pirmadieniniai makaronai", "Makaronai užkandžiui (pirmadienį)", "Pirmadienio vakarienės makaronai"]
 }
