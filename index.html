@@ -84,6 +84,7 @@
     {
       dataType: "json",
       url: 'test.json',
+      async : false,
       success: function(data) 
       {
         $.ajax(
@@ -103,30 +104,28 @@
                 i+= 1;
               });
               $("#weeks").html($("#weeks").html() + newWeeksDiv);
+              
+              $.ajax(
+              {
+                dataType: "html",
+                url: 'weekday_recipes.html',
+                async : false,
+                success: function(rowHtml) 
+                {
+                  data["weekdays"].forEach(function(weekday)
+                  {
+                    var weekId = "#" + data[week] + "-week";
+                    $(weekId).html($(weekId).html() + rowHtml.replace("{{WEEKDAY}}", weekday));
+                  });
+                }
+              });
             });
-          }
-        });
-               
-        $.ajax(
-        {
-          dataType: "html",
-          url: 'weekday_recipes.html',
-          async : false,
-          success: function(rowHtml) 
-          {
-            data["weekdays"].forEach(function(weekday)
-            {
-              $("#first-week").html($("#first-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
-              $("#second-week").html($("#second-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
-              $("#third-week").html($("#third-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
-              $("#fourth-week").html($("#fourth-week").html() + rowHtml.replace("{{WEEKDAY}}", weekday));
-            });
-            $(".RecipePopover").popover({placement : 'right'});
-            $("#myNav").affix({offset: {top: 125 }});
           }
         });
       }
     });
+    $(".RecipePopover").popover({placement : 'right'});
+    $("#myNav").affix({offset: {top: 125 }});
   });
   </script>
 </body>
