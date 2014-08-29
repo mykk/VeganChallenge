@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Example of Twitter Bootstrap 3 Affix Events</title>
+<title>Išmėgink veganizmą - paprastai, skaniai ir smagiai!</title>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -95,8 +95,8 @@
           {
             data["weeks"].forEach(function(week)
             {
-              newWeeksDiv = week_table.replace("{{WEEK}}", week).split("{{WEEK_ID}}").join(data[week]);
-              i = 0;
+              var newWeeksDiv = week_table.replace("{{WEEK}}", week).split("{{WEEK_ID}}").join(data[week]);
+              var i = 0;
               data["meals"].forEach(function(meal)
               {
                 newWeeksDiv = newWeeksDiv.replace("{{meal_" + i + "}}", meal); 
@@ -110,7 +110,7 @@
         $.ajax(
         {
           dataType: "html",
-          url: 'test.html',
+          url: 'weekday_recipes.html',
           async : false,
           success: function(rowHtml) 
           {

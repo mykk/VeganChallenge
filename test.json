@@ -5,5 +5,15 @@
 "Trečia savaitė" : "third",
 "Ketvirta savaitė" : "fourth",
 "weekdays": ["Pirmadienis", "Antradienis", "Trečiadienis", "Ketvirtadienis", "Penktadienis", "Šeštadienis", "Sekmadienis"],
-"meals": ["Pusryčiai", "Priešpiečiai", "Pietūs", "Užkandis", "Vakarienė"]
+
+"meals": ["Pusryčiai", "Priešpiečiai", "Pietūs", "Užkandis", "Vakarienė"],
+
+"Pirmadienis" : "monday", 
+"Antradienis" : "tuesday",
+"Trečiadienis" : "wednesday", 
+"Ketvirtadienis" : "thursday", 
+"Penktadienis" : "friday", 
+"Šeštadienis" : "saturday", 
+"Sekmadienis" : "sunday",
+"first-monday" : ["Ypatingi makaronai", "Kitokie makaronai", "Makaronai", "Makaronai2", "Makaronai3"]
 }
