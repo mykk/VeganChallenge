@@ -95,7 +95,7 @@
           {
             data["weeks"].forEach(function(week)
             {
-              newWeeksDiv = week_table.replace("{{WEEK}}", week).replace("{{WEEK_ID}}", data[week]);
+              newWeeksDiv = week_table.replace("{{WEEK}}", week).replace("{{WEEK_ID}}", (data[week] + "-week")).replace("{{WEEK_NO}}", data[week]);
               i = 0;
               data["meals"].forEach(function(meal)
               {
