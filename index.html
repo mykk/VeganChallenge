@@ -1,157 +1,83 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Išmėgink veganizmą - paprastai, skaniai ir smagiai!</title>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<title>Bootstrap In Practice - Landing Page Example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet" />
 
-<style type="text/css">
-    /* Custom Styles */
-    ul.nav-tabs{
-        width: 140px;
-        margin-top: 20px;
-        border-radius: 4px;
-        border: 1px solid #ddd;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
-    }
-    ul.nav-tabs li{
-        margin: 0;
-        border-top: 1px solid #ddd;
-    }
-    ul.nav-tabs li:first-child{
-        border-top: none;
-    }
-    ul.nav-tabs li a{
-        margin: 0;
-        padding: 8px 16px;
-        border-radius: 0;
-    }
-    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover
-    {
-      color: #ffd;
-      background: #08d;
-      border: 1px solid #0088cc;
-    }
-    
-    ul.nav-tabs li:first-child a{
-        border-radius: 4px 4px 0 0;
-    }
-    ul.nav-tabs li:last-child a{
-        border-radius: 0 0 4px 4px;
-    }
-    ul.nav-tabs.affix{
-        top: 30px; /* Set the top position of pinned element */
-    }
-    h1
-    {
-      line-height: 1.2em; 
-      color: #667;
-      font-family: Rokkitt,serif;
-      font-size: 70px;
-      font-weight: 400;
-      padding: 5px 0px 0px 0px;
-    }
-    h2
-    {
-      line-height: 1em; 
-      color: #667;
-      font-size: 40px;
-      font-weight: 300;
-      padding: 5px 0px 0px 0px;
-    }
-</style>
+	<style>
+
+		/* http://css-tricks.com/perfect-full-page-background-image/ */
+		html {
+			background: url(images/augalybe.jpg) no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		body {
+			padding-top: 20px;
+			font-size: 16px;
+			font-family: "Open Sans",serif;
+			background: transparent;
+		}
+
+		h1 {
+			font-family: "Abel", Arial, sans-serif;
+			font-weight: 400;
+			font-size: 40px;
+		}
+
+		/* Override B3 .panel adding a subtly transparent background */
+		.panel {
+			background-color: rgba(255, 255, 255, 0.9);
+		}
+
+		.margin-base-vertical {
+			margin: 40px 0;
+		}
+
+	</style>
+
 </head>
-<body id="mainbody" data-spy="scroll" data-target="#myScrollspy">
-  <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  <script>
-  $(document).ready(function()
-  {
-    try
-    {
-      $.ajax(
-      {
-        dataType: "html",
-        url: 'container.html',
-        async : false,
-        success: function(container) 
-        {
-          $("#mainbody").html(container);
-        }
-      });
-      
-      $.ajax(
-      {
-        dataType: "json",
-        url: 'test.json',
-        async : false,
-        success: function(data) 
-        {
-          $.ajax(
-          {
-            dataType: "html",
-            async : false,
-            url: 'week_table.html',
-            success: function(week_table) 
-            {
-              data["weeks"].forEach(function(week)
-              {
-                var newWeeksDiv = week_table.replace("{{WEEK}}", week).split("{{WEEK_ID}}").join(data[week]);
-                var i = 0;
-                data["meals"].forEach(function(meal)
-                {
-                  newWeeksDiv = newWeeksDiv.replace("{{meal_" + i + "}}", meal); 
-                  i+= 1;
-                });
-                $("#weeks").html($("#weeks").html() + newWeeksDiv);
-                
-                $.ajax(
-                {
-                  dataType: "html",
-                  url: 'weekday_recipes.html',
-                  async : false,
-                  success: function(rowHtml) 
-                  {
-                    data["weekdays"].forEach(function(weekday)
-                    {
-                      var weekId = "#" + data[week] + "-week";
-                      $(weekId).html($(weekId).html() + rowHtml.split("{{WEEKDAY_NAME}}").join(weekday).split("{{WEEKDAY}}").join(data[weekday]).split("{{WEEK}}").join(data[week]));
-                      
-                      var weekWeekdayId = data[week] + '-' + data[weekday];
-                      var i = 0;
-                      data[weekWeekdayId].forEach(function(meal)
-                      {
-                        var meal_td = "<td><a style = 'cursor:pointer' class='RightPopover' data-html='true' data-toggle='popover' title='{{title}}' data-content='{{data-content}}'>{{title}}</a>{{description}}</td>";
-                        meal_td = meal_td.split("{{title}}").join(meal);
-                        meal_td = meal_td.split("{{description}}").join(data[meal]["description"]);
-                        meal_td = meal_td.split("{{data-content}}").join(data[meal]["popover"]);
-                        
-                        if (i > data[weekWeekdayId].length / 2)
-                        {
-                          meal_td = meal_td.replace("RightPopover", "LeftPopover");
-                        }
-                        i += 1;
-                        $("#" + weekWeekdayId).html($("#" + weekWeekdayId).html() + meal_td);
-                      });
-                    });
-                  }
-                });
-              });
-            }
-          });
-        }
-      });
-    }
-    finally
-    {
-      $(".RightPopover").popover({placement : 'right'});
-      $(".LeftPopover").popover({placement : 'left'});
-      $("#myNav").affix({offset: {top: 125 }});
-    }
-  });
-  </script>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 panel panel-default">
+
+				<h1 class="margin-base-vertical">Have you ever seen the rain?</h1>
+
+				<p>
+					Someone told me long ago there's a calm before the storm. I know, It's been comin for some time.
+				</p>
+				<p>
+					When it's over, so they say, it'll rain a sunny day. I know,	Shinin down like water.
+				</p>
+
+				<p>
+					I want to know, have you ever seen the rain?
+				</p>
+
+				<form class="margin-base-vertical">
+					<p class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+						<input type="text" class="form-control input-lg" name="email" />
+					</p>
+					<p class="help-block text-center"><small>We won't send you spam. Unsubscribe at any time.</small></p>
+					<p class="text-center">
+						<button type="submit" class="btn btn-success btn-lg">Keep me posted</button>
+					</p>
+					</span>
+				</form>
+			</div><!-- //main content -->
+		</div><!-- //row -->
+	</div> <!-- //container -->
+
 </body>
 </html>
